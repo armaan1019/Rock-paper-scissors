@@ -11,6 +11,28 @@ if (savedScore) {
 
 updateScoreElement();
 
+document.querySelector('.rock-button').addEventListener('click', () => {
+    makeMove('rock');
+});
+
+document.querySelector('.paper-button').addEventListener('click', () => {
+    makeMove('paper');
+});
+
+document.querySelector('.scissors-button').addEventListener('click', () => {
+    makeMove('scissors');
+});
+
+document.body.addEventListener('keydown', (event) => {
+    if(event.key === 'r') {
+        makeMove('rock');
+    } else if(event.key === 'p') {
+        makeMove('paper');
+    } else if(event.key === 's') {
+        makeMove('scissors');
+    }
+});
+
 let isAutoPlaying = false;
 let intervalId;
 
